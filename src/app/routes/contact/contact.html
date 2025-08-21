@@ -1,0 +1,20 @@
+<p>contact works!</p>
+<br>
+<br>
+<form class=" pl-10 " [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input class="border p-1" type="text" placeholder="enter name" formControlName="name">
+    <br><br>
+    <input class="border p-1" type="text" placeholder="enter password" formControlName="password">
+    <br><br>
+    <input class="border p-1" type="text" placeholder="enter password" formControlName="email">
+    <br><br>
+
+    <button (click)="onSubmit()" class="border p-2 cursor-pointer bg-gray-400" type="button">submit</button>
+    <br>
+</form>
+<br><br>
+
+
+<button class="border cursor-pointer">
+    <app-button1 />
+</button>
