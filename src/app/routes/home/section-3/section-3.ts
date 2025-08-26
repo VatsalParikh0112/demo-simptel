@@ -13,10 +13,9 @@ export class Section3 {
 private _userName:string = '';
 
   get userName(): string {
-    return this._userName.toUpperCase(); // Transforms the data before displaying
+    return this._userName.toUpperCase();
   }
 
-  // Setter for userName
   @Input()
   set userName(name: string) {
     if (name.length > 2) {

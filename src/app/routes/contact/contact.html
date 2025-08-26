@@ -1,17 +1,25 @@
-<p>contact works!</p>
+<div>contact works!</div>
 <br>
 <br>
 <form class=" pl-10 " [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <input class="border p-1" type="text" placeholder="enter name" formControlName="name">
     <br><br>
-    <input class="border p-1" type="text" placeholder="enter password" formControlName="password">
+    <input class="border p-1" type="text" placeholder="enter email" formControlName="email">
     <br><br>
-    <input class="border p-1" type="text" placeholder="enter password" formControlName="email">
+    <input class="border p-1" type="text" placeholder="enter password" formControlName="password">
     <br><br>
 
     <button (click)="onSubmit()" class="border p-2 cursor-pointer bg-gray-400" type="button">submit</button>
     <br>
 </form>
+<br>
+@if (formValues) {
+<div>Submitted Form Data:</div>
+<div>Name: {{ formValues.name }}</div>
+<div>Email: {{ formValues.email }}</div>
+<div>Password: {{ formValues.password }}</div>
+}
+<br>
 <br><br>
 
 
@@ -27,4 +35,4 @@
 
 <app-section-1 (messageEvent)="receiveMessage($event)"></app-section-1>
 
-<p>Message Received: <strong>{{ receivedMessage }}</strong></p>
+<div>Message Received: <strong>{{ receivedMessage }}</strong></div>

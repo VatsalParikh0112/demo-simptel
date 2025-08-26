@@ -1,27 +1,37 @@
 import { Component } from '@angular/core';
 import { Button1 } from '../../shared/button1/button1';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Button } from '../../shared/button/button';
-import { Section1 } from './section-1/section-1'; 
+import { Section1 } from './section-1/section-1';
 
 @Component({
   selector: 'app-contact',
-  imports: [Button1, ReactiveFormsModule, Button, Section1 ],
+  imports: [Button1, ReactiveFormsModule, Button, Section1],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })
 export class Contact {
   profileForm = new FormGroup({
-    name: new FormControl(),
-    password: new FormControl(),
-    email: new FormControl()
-  })
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6)
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(8),
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ])
+  });
+
+  formValues: any;
 
   onSubmit() {
-    console.log(this.profileForm.value.name);
-    console.log(this.profileForm.value.email);
-    console.log(this.profileForm.value.password);
-
+    if (this.profileForm.valid) {
+      this.formValues = this.profileForm.value;
+    }
   }
 
   receivedMessage: string = '...waiting for message';
