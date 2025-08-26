@@ -1,13 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Button1 } from '../../../shared/button1/button1';
 import { Button } from '../../../shared/button/button';
 import { Button2 } from '../../../shared/button-2/button-2';
 
 
 @Component({
   selector: 'app-section-3',
-  imports: [Button1, Button, Button2],
+  imports: [ Button, Button2],
   templateUrl: './section-3.html',
   styleUrl: './section-3.css'
 })

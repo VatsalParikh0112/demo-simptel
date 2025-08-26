@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrl: './button1.css'
 })
 export class Button1 {
+
+  @Input() label = 'default';
 
   constructor(private router: Router) {}
 

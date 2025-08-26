@@ -6,10 +6,6 @@
 </div>
 
 <div>
-    <app-button1></app-button1>
-</div>
-
-<div>
     <h2>{{ userName }}</h2>
     <p>{{ welcomeMessage }}</p>
 </div>
@@ -18,5 +14,5 @@
 <br>
 
 <div>
-    <app-button-2 (goToContact)="redirect($event)" ></app-button-2>
+    <app-button-2 label="Go To Contact" (goToContact)="redirect($event)" ></app-button-2>
 </div>
