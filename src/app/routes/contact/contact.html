@@ -3,10 +3,25 @@
 <br>
 <form class=" pl-10 " [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <input class="border p-1" type="text" placeholder="enter name" formControlName="name">
+    @if (profileForm.controls.name.invalid && profileForm.controls.name.touched) {
+    @if (profileForm.controls.name.hasError('minlength')) {
+    <div class="text-red-500">Name must be at least 6 characters long.</div>
+    }
+    }
     <br><br>
     <input class="border p-1" type="text" placeholder="enter email" formControlName="email">
+    @if (profileForm.controls.email.invalid && profileForm.controls.email.touched) {
+    @if (profileForm.controls.email.hasError('minlength')) {
+    <div class="text-red-500">Enter valid email id.</div>
+    }
+    }
     <br><br>
     <input class="border p-1" type="text" placeholder="enter password" formControlName="password">
+    @if (profileForm.controls.password.invalid && profileForm.controls.password.touched) {
+    @if (profileForm.controls.password.hasError('minlength')) {
+    <div class="text-red-500">Name must be at least 8 characters long.</div>
+    }
+    }
     <br><br>
 
     <button (click)="onSubmit()" class="border p-2 cursor-pointer bg-gray-400" type="button">submit</button>

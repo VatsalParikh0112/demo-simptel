@@ -22,6 +22,7 @@ export class Contact {
     ]),
     email: new FormControl('', [
       Validators.required,
+      Validators.minLength(6),
       Validators.email
     ])
   });
