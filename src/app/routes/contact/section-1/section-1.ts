@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Button } from '../../../shared/button/button';
 
 @Component({
   selector: 'app-section-1',
-  imports: [],
+  imports: [Button],
   templateUrl: './section-1.html',
   styleUrl: './section-1.css'
 })
