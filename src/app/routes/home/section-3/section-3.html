@@ -2,7 +2,7 @@
 <p>Section 3 works!</p>
 
 <div>
-    <app-button label="shared button home"></app-button>
+    <app-button (sendMessage)="console($event)" label="shared button homeeeeeee"></app-button>
 </div>
 
 <div>
@@ -15,3 +15,8 @@
 </div>
 
 <br>
+<br>
+
+<div>
+    <app-button-2 (goToContact)="redirect($event)" ></app-button-2>
+</div>

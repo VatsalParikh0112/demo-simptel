@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -8,4 +8,10 @@ import { Component, Input } from '@angular/core';
 })
 export class Button {
   @Input() label = 'default value';
+  @Output() sendMessage = new EventEmitter<string>();
+
+
+  notifyParent () {
+    this.sendMessage.emit ("message from child")
+  }
 }
