@@ -1,11 +1,12 @@
 import { Component, input, OnInit } from '@angular/core';
 import { Dataservice } from '../../services/data';
+import { Button } from '../../shared/button/button';
 
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [Button],
   templateUrl: './about.html',
   styleUrl: './about.css'
 })

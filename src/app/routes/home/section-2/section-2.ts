@@ -7,10 +7,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './section-2.css'
 })
 export class Section2 {
-  @Input() msg: string = '';
-  @Output() msgChange = new EventEmitter<string>();
-
-  updateMessage() {
-    this.msgChange.emit('Hi from Child');
-  }
+  @Input() name: string = '';
+  @Input() age: number = 0;
 }

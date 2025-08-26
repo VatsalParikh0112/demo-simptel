@@ -5,20 +5,14 @@ import { Section3 } from './section-3/section-3';
 
 @Component({
   selector: 'app-home',
-  standalone:true,
-  imports: [Section1, Section2, Section3 ],
+  standalone: true,
+  imports: [Section1, Section2, Section3],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
-  private _message = 'Home component !!!';
 
-    get message ():string {
-    return this._message;
-  }
-
-  set message(value:string) {
-    this._message = value.toUpperCase();
-  }
+  parentName: string = 'Alice';
+  parentAge: number = 30;
 
 }

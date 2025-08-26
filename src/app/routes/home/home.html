@@ -1,8 +1,8 @@
 <app-section-1 />
 
 <div class=" text-red-400 test-2xl ">Home</div>
-<div>Message in Home {{ message }}</div>
 
-<app-section-2 [msg]="message" (msgChange)="message=$event" />
+<app-section-2 [name]="parentName" [age]="parentAge" />
 
-<app-section-3 />
+<app-section-3 userName="John Doe" />
+<app-section-3 userName="John " />

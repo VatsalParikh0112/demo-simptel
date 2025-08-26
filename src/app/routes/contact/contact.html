@@ -18,3 +18,13 @@
 <button class="border cursor-pointer">
     <app-button1 />
 </button>
+
+<div>
+    <app-button label="shared button contact"></app-button>
+</div>
+
+<br><br>
+
+<app-section-1 (messageEvent)="receiveMessage($event)"></app-section-1>
+
+<p>Message Received: <strong>{{ receivedMessage }}</strong></p>
