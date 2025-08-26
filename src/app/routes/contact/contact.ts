@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Button1 } from '../../shared/button1/button1';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Button } from '../../shared/button/button';
-import { Section1 } from './section-1/section-1';
+import { Section1 } from './section-1/section-1'; 
 
 @Component({
   selector: 'app-contact',
-  imports: [Button1, ReactiveFormsModule, Button, Section1],
+  imports: [Button1, ReactiveFormsModule, Button, Section1 ],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })
