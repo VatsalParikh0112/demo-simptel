@@ -26,9 +26,9 @@
 
 
     <div class=" flex justify-between ">
-        <button (keyup.enter)="onSubmit()" (click)="onSubmit()" class="border p-2 cursor-pointer bg-gray-400"
-            type="button">Submit</button>
-        <button [disabled]="profileForm.pristine" (keyup.enter)="reset()" (click)="reset()" class="border p-2 cursor-pointer text-black bg-red-500 disabled:bg-gray-50 disabled:cursor-not-allowed"
+        <button (keyup.enter)="onSubmit()" (click)="onSubmit()" class="border p-2 cursor-pointer bg-green-500 text-black disabled:bg-gray-300 disabled:cursor-not-allowed"
+            [disabled]="profileForm.invalid" type="submit">Submit</button>
+        <button [disabled]="profileForm.pristine" (keyup.enter)="reset()" (click)="reset()" class="border p-2 cursor-pointer text-black bg-red-500 disabled:bg-gray-300 disabled:cursor-not-allowed"
             type="button">Reset</button>
     </div>
 
