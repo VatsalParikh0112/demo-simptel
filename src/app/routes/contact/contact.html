@@ -1,7 +1,7 @@
 <div>contact works!</div>
 <br>
 <br>
-<form class=" border rounded-xl w-min mx-10 p-10 " [formGroup]="profileForm" (ngSubmit)="onSubmit()" cdkTrapFocus >
+<form class=" border rounded-xl w-min mx-10 p-10 " [formGroup]="profileForm" (ngSubmit)="onSubmit()" cdkTrapFocus>
     <input class="border p-1" type="text" placeholder="enter name" formControlName="name">
     @if (profileForm.controls.name.invalid && profileForm.controls.name.touched) {
     @if (profileForm.controls.name.hasError('minlength')) {
@@ -11,7 +11,7 @@
     <br><br>
     <input class="border p-1" type="text" placeholder="enter email" formControlName="email">
     @if (profileForm.controls.email.invalid && profileForm.controls.email.touched) {
-    @if (profileForm.controls.email.hasError('minlength')) {
+    @if (profileForm.controls.email.hasError('email')) {
     <div class="text-red-500">Enter valid email id.</div>
     }
     }
@@ -24,7 +24,14 @@
     }
     <br><br>
 
-    <button (keyup.enter)="onSubmit()" (click)="onSubmit()" class="border p-2 cursor-pointer bg-gray-400" type="button">submit</button>
+
+    <div class=" flex justify-between ">
+        <button (keyup.enter)="onSubmit()" (click)="onSubmit()" class="border p-2 cursor-pointer bg-gray-400"
+            type="button">Submit</button>
+        <button [disabled]="profileForm.pristine" (keyup.enter)="reset()" (click)="reset()" class="border p-2 cursor-pointer text-black bg-red-500 disabled:bg-gray-50 disabled:cursor-not-allowed"
+            type="button">Reset</button>
+    </div>
+
     <br>
 </form>
 <br>
@@ -38,7 +45,7 @@
 <br><br>
 
 
-<app-button1 label="Go to HomePage" ></app-button1>
+<app-button1 label="Go to HomePage"></app-button1>
 
 <div>
     <app-button label="shared button contact"></app-button>
