@@ -1,7 +1,7 @@
 <div>contact works!</div>
 <br>
 <br>
-<form class=" pl-10 " [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<form class=" border rounded-xl w-min mx-10 p-10 " [formGroup]="profileForm" (ngSubmit)="onSubmit()" cdkTrapFocus >
     <input class="border p-1" type="text" placeholder="enter name" formControlName="name">
     @if (profileForm.controls.name.invalid && profileForm.controls.name.touched) {
     @if (profileForm.controls.name.hasError('minlength')) {
@@ -24,7 +24,7 @@
     }
     <br><br>
 
-    <button (click)="onSubmit()" class="border p-2 cursor-pointer bg-gray-400" type="button">submit</button>
+    <button (keyup.enter)="onSubmit()" (click)="onSubmit()" class="border p-2 cursor-pointer bg-gray-400" type="button">submit</button>
     <br>
 </form>
 <br>

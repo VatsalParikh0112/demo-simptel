@@ -56,7 +56,7 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-KBYV2LFA.js";
+} from "./chunk-KJVRUFDE.js";
 import {
   __async,
   __spreadProps,
@@ -3694,6 +3694,9 @@ var PlatformNavigation = class _PlatformNavigation {
 
 // node_modules/@angular/common/fesm2022/common.mjs
 var PLATFORM_BROWSER_ID = "browser";
+function isPlatformBrowser(platformId) {
+  return platformId === PLATFORM_BROWSER_ID;
+}
 var VERSION = new Version("20.1.6");
 var ViewportScroller = class _ViewportScroller {
   // De-sugared tree-shakable injection
@@ -5005,6 +5008,7 @@ export {
   parseCookieValue,
   XhrFactory,
   PLATFORM_BROWSER_ID,
+  isPlatformBrowser,
   ViewportScroller
 };
 /*! Bundled license information:
@@ -5020,4 +5024,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-PT76V6PU.js.map
+//# sourceMappingURL=chunk-7AIHG63K.js.map
