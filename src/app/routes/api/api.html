@@ -1,0 +1,28 @@
+<h2>User Management</h2>
+
+<!-- Add User Form -->
+<form class=" flex flex-col gap-5 p-10 w-1/3 " [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input class=" border p-2  " formControlName="name" placeholder="Name" />
+    <input class=" border p-2  " formControlName="email" placeholder="Email" type="email" />
+    <input class=" border p-2  " formControlName="password" placeholder="Password" type="password" />
+    <button class=" border " type="submit" [disabled]="userForm.invalid">Add User</button>
+</form>
+
+
+<div class=" flex justify-center items-center ">
+    <hr class=" w-10/12 " />
+</div>
+
+<button class=" border " (click)="loadUsers()">Fetch Users</button>
+
+<ul>
+    @for (u of user; track u.id) {
+    <li>
+        <strong>ID:</strong> {{ u.id }} |
+        <strong>Name:</strong> {{ u.name }} |
+        <strong>Email:</strong> {{ u.email }} |
+        <strong>Password:</strong> {{ u.password }}
+        <button (click)="removeUser(u.id)">Delete</button>
+    </li>
+    }
+</ul>

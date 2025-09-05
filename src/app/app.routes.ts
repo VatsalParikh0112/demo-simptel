@@ -1,29 +1,30 @@
 import { Routes } from '@angular/router';
 import { Home } from './routes/home/home';
-import { About } from './routes/about/about';
-import { Contact } from './routes/contact/contact';
-import { PageNotFound } from './routes/page-not-found/page-not-found';
-
 
 export const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: Home
   },
-  { 
-    path: 'about', 
-    component: About
-  },
-  { 
-    path: 'about/:aboutId', 
-    component: About
-  },
-  { 
-    path: 'contact', 
-    component: Contact 
+  {
+    path: 'about',
+    loadComponent: () => import('./routes/about/about').then(c => c.About)
   },
   {
+    path: 'about/:aboutId',
+    loadComponent: () => import('./routes/about/about').then(c => c.About)
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./routes/contact/contact').then(c => c.Contact)
+  },
+  {
+    path: 'api',
+    loadComponent: () => import('./routes/api/api').then(c => c.API)
+  },
+  { 
     path: '**',
-    component:PageNotFound
+    loadComponent: () => import('./routes/page-not-found/page-not-found').then(c => c.PageNotFound) 
   }
+
 ];

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/services/api.spec.ts", "src/app/services/api.ts"],
+  "sourcesContent": ["import { TestBed } from '@angular/core/testing';\r\n\r\nimport { Api } from './api';\r\n\r\ndescribe('Api', () => {\r\n  let service: Api;\r\n\r\n  beforeEach(() => {\r\n    TestBed.configureTestingModule({});\r\n    service = TestBed.inject(Api);\r\n  });\r\n\r\n  it('should be created', () => {\r\n    expect(service).toBeTruthy();\r\n  });\r\n});\r\n", "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class Api {\r\n  private url = 'https://jsonplaceholder.typicode.com/users?_limit=3';\r\n\r\n  getUser(){\r\n    \r\n  }\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;AAAA;;;;ACAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAA2CA,cAAA,EAAAC,EAAA,CAAA;AAOpC,IAAMC,MAAN,MAAMA,KAAG;EACNC,OAAGH,cAAA,EAAAC,EAAA,CAAA,KAAG;EAEdG,UAAO;AAAAJ,kBAAA,EAAAK,EAAA,CAAA;EAEP;;AACDL,cAAA,EAAAC,EAAA,CAAA;AANYC,MAAGI,WAAA,CAHfC,WAAW;EACVC,YAAY;CACb,CAAC,GACWN,GAAG;;;ADHhB,SAAS,OAAO,MAAK;AACnB,MAAI;AAEJ,aAAW,MAAK;AACd,YAAQ,uBAAuB,CAAA,CAAE;AACjC,cAAU,QAAQ,OAAO,GAAG;EAC9B,CAAC;AAED,KAAG,qBAAqB,MAAK;AAC3B,WAAO,OAAO,EAAE,WAAU;EAC5B,CAAC;AACH,CAAC;",
+  "names": ["cov_u2jgnnedm", "s", "Api", "url", "getUser", "f", "__decorate", "Injectable", "providedIn"]
+}

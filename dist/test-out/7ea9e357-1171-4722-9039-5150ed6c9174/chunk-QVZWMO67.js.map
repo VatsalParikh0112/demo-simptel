@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:src\\app\\layout\\footer\\footer.html", "angular:jit:style:src\\app\\layout\\footer\\footer.css", "src/app/layout/footer/footer.ts"],
+  "sourcesContent": ["<footer class=\"bg-gray-800 p-4\">\r\n  <p class=\"text-white\">Footer Content</p>\r\n</footer>\r\n", "/* src/app/layout/footer/footer.css */\n/*# sourceMappingURL=footer.css.map */\n", "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-footer',\r\n  imports: [],\r\n  templateUrl: './footer.html',\r\n  styleUrl: './footer.css'\r\n})\r\nexport class Footer {\r\n\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,eAAA;AAAA;AAAA,IAAAD,kBAAA;AAAA;AAAA;;;ICQa;;;;;;;AARb;AAQO,IAAM,SAAN,MAAME,QAAM;;AAAN,aAAM,WAAA;MANlB,UAAU;QACT,UAAU;QACV,SAAS,CAAA;QACT,UAAA;;OAED;OACY,MAAM;;;",
+  "names": ["footer_default", "init_footer", "Footer"]
+}

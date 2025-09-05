@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { users } from '../interfaces/users';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class Api {
+  private url = 'https://jsonplaceholder.typicode.com/users?_limit=3';
+
+  constructor(private http : HttpClient ) {}
+
+  getUser(){
+    return this.http.get(this.url);   
+  }
+  
+  getUserById (id: number) : Observable <users[]> {
+    const params = new HttpParams().set('id', id.toString());
+    return this.http.get<users[]>(this.url, {params});
+  }
+
+  addUser(user: users[]) : Observable <any> {
+    return this.http.post(this.url, user);
+  }
+
+  deleteUser(id : number) : Observable <users[]> {
+    const params = new HttpParams().set('id', id.toString());
+    return this.http.get<users[]>(this.url, {params});
+  }
+}

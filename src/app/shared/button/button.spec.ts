@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Button } from './button';
+import { By } from '@angular/platform-browser';
 
-describe('Button', () => {
+fdescribe('Button', () => {
   let component: Button;
   let fixture: ComponentFixture<Button>;
 
@@ -10,7 +11,7 @@ describe('Button', () => {
     await TestBed.configureTestingModule({
       imports: [Button]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(Button);
     component = fixture.componentInstance;
@@ -20,4 +21,17 @@ describe('Button', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render label in html', () => {
+    fixture.componentRef.setInput('label', '');
+    fixture.detectChanges();
+    const buttonElement = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(buttonElement.textContent).toContain('');
+  });
+
+  it('should emit msg when notify parent func is called', () => {
+    spyOn(component.sendMessage, "emit");
+    component.notifyParent();
+    expect(component.sendMessage.emit).toHaveBeenCalledWith('message from child');
+  })
 });
