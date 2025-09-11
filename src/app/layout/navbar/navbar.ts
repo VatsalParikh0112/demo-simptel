@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.css'
 })
 export class Navbar {
-navigateTo(arg0: string) {
-throw new Error('Method not implemented.');
-}
-  private router = inject(Router);
+
+  navigateTo() {
+    throw new Error('Method not implemented.');
+  }
+
+  constructor ( private router: Router ) {}
 
   public clickEvent(path: string) {
     this.router.navigate([path]);

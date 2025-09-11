@@ -10,7 +10,7 @@ describe('Section1', () => {
     await TestBed.configureTestingModule({
       imports: [Section1]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(Section1);
     component = fixture.componentInstance;
@@ -19,5 +19,15 @@ describe('Section1', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit the correct message when notifyParent is called', () => {
+    const emitSpy = spyOn(component.messageEvent, 'emit');
+    const expectedMessage = 'Hello from the child!';
+
+    component.notifyParent();
+
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(expectedMessage);
   });
 });

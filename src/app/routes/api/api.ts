@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Api } from '../../services/api';
-import { SlimUser } from '../../interfaces/users';
+import { SlimUser, users } from '../../interfaces/users';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class API implements OnInit {
   user: SlimUser[] = [];
   userForm!: FormGroup;
 
-  constructor(private api: Api, private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private api: Api) { }
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -27,7 +27,7 @@ export class API implements OnInit {
 
   loadUsers() {
     this.api.getUser().subscribe((data: any) => {
-      this.user = data.map((u: { id: any; name: any; email: any; password: any; }) => ({
+      this.user = data.map((u: { id: number; name: string; email: string; password: string; }) => ({
         id: u.id,
         name: u.name,
         email: u.email,
@@ -40,8 +40,7 @@ export class API implements OnInit {
     if (this.userForm.valid) {
       const newId =
         this.user.length > 0
-          ? Math.max(...this.user.map((u) => u.id)) + 1
-          : 1;
+          ? Math.max(...this.user.map((u) => u.id)) + 1 : 1;
 
       const newUser: any = {
         id: newId,

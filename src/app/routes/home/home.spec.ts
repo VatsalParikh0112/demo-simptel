@@ -20,4 +20,12 @@ describe('Home', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('when parentAge is called its age should be 30.', () => {
+    expect(component.parentAge).toBe(30);
+  })
+
+    it('when parentname is called its name should be Alice.', () => {
+    expect(component.parentName).toBe('Alice');
+  })
 });

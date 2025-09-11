@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/layout/navbar/navbar.spec.ts"],
+  "sourcesContent": ["import { ComponentFixture, TestBed } from \"@angular/core/testing\";\r\nimport { Navbar } from \"./navbar\";\r\nimport { Router } from \"@angular/router\";\r\n\r\ndescribe ('Navbar', () => {\r\n  let component : Navbar;\r\n  let fixture : ComponentFixture<Navbar>;\r\n  // create fake object navigate method\r\n  const routerSpy = jasmine.createSpyObj('Router', ['navigate']);\r\n\r\n  beforeEach (async () => {\r\n    await TestBed.configureTestingModule({\r\n      declarations: [Navbar],\r\n      providers: [\r\n        {provide: Router, useValue: routerSpy}\r\n      ]\r\n    }).compileComponents();\r\n\r\n    fixture = TestBed.createComponent(Navbar);\r\n    component = fixture.componentInstance;\r\n    fixture.detectChanges();\r\n  });\r\n\r\n  it ('should create Navbar component',  )\r\n})"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AACA;AACA;AAEA,aAAU,UAAU,MAAK;AACvB,UAAI;AACJ,UAAI;AAEJ,YAAM,YAAY,QAAQ,aAAa,UAAU,CAAC,UAAU,CAAC;AAE7D,iBAAY,MAAW;AACrB,cAAM,QAAQ,uBAAuB;UACnC,cAAc,CAAC,MAAM;UACrB,WAAW;YACT,EAAC,SAAS,QAAQ,UAAU,UAAS;;SAExC,EAAE,kBAAiB;AAEpB,kBAAU,QAAQ,gBAAgB,MAAM;AACxC,oBAAY,QAAQ;AACpB,gBAAQ,cAAa;MACvB,EAAC;AAED,SAAI,gCAAgC;IACtC,CAAC;;;",
+  "names": []
+}

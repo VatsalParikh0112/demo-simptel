@@ -24,7 +24,7 @@ export class Api {
     return this.http.post(this.url, user);
   }
 
-  deleteUser(id : number) : Observable <users[]> {
+  deleteUser(id : number) : Observable <any> {
     const params = new HttpParams().set('id', id.toString());
     return this.http.get<users[]>(this.url, {params});
   }

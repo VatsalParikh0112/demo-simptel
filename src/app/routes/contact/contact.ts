@@ -14,7 +14,7 @@ import { Section1 } from './section-1/section-1';
 })
 export class Contact {
   profileForm = new FormGroup({
-    name: new FormControl('', [
+    userName: new FormControl('', [
       Validators.required,
       Validators.minLength(6)
     ]),

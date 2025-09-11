@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-button-2',
@@ -7,11 +7,10 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
   styleUrl: './button-2.css'
 })
 export class Button2 {
-  @Input() label = 'default value';
-  @Output() goToContact = new EventEmitter();
+  label = input<string>('');
+  goToContact = output<string>();
 
   changePage () {
-
     const path = '/contact';
     this.goToContact.emit( path );
   }

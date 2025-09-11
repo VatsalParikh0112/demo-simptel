@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/routes/api/api.spec.ts"],
+  "sourcesContent": ["import { ComponentFixture, TestBed } from '@angular/core/testing';\r\nimport { ReactiveFormsModule } from '@angular/forms';\r\nimport { of } from 'rxjs';\r\nimport { API } from './api';\r\nimport { Api } from '../../services/api';\r\nimport { SlimUser } from '../../interfaces/users';\r\n\r\nfdescribe('API', () => {\r\n    let Component : API;\r\n    let fixture : ComponentFixture<API>;\r\n    let mockAPI : jasmine.SpyObj<API>;\r\n\r\n    const mockUsers : SlimUser[] = [\r\n        \r\n    ]\r\n\r\n    beforeEach(async () => {\r\n        mockAPI = jasmine.createSpyObj('Api', ['getUser', 'addUser', 'deleteUser']);\r\n        \r\n    })\r\n})"],
+  "mappings": ";;;;;;AAOA;;cAAU,OAAO,MAAK;AAClB,UAAI;AACJ,UAAI;AACJ,UAAI;AAEJ,YAAM,YAAyB,CAAA;AAI/B,iBAAW,MAAW;AAClB,kBAAU,QAAQ,aAAa,OAAO,CAAC,WAAW,WAAW,YAAY,CAAC;MAE9E,EAAC;IACL,CAAC;;;",
+  "names": []
+}

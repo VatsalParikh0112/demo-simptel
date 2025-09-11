@@ -2,9 +2,9 @@
 <br>
 <br>
 <form class=" border rounded-xl w-min mx-10 p-10 " [formGroup]="profileForm" (ngSubmit)="onSubmit()" cdkTrapFocus>
-    <input class="border p-1" type="text" placeholder="enter name" formControlName="name">
-    @if (profileForm.controls.name.invalid && profileForm.controls.name.touched) {
-    @if (profileForm.controls.name.hasError('minlength')) {
+    <input class="border p-1" type="text" placeholder="enter name" formControlName="userName">
+    @if (profileForm.controls.userName.invalid && profileForm.controls.userName.touched) {
+    @if (profileForm.controls.userName.hasError('minlength')) {
     <div class="text-red-500">Name must be at least 6 characters long.</div>
     }
     }
@@ -37,7 +37,7 @@
 <br>
 @if (formValues) {
 <div>Submitted Form Data:</div>
-<div>Name: {{ formValues.name }}</div>
+<div>Name: {{ formValues.userName }}</div>
 <div>Email: {{ formValues.email }}</div>
 <div>Password: {{ formValues.password }}</div>
 }

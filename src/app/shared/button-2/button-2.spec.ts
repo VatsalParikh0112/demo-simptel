@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Button2 } from './button-2';
 
 describe('Button2', () => {
@@ -19,5 +18,16 @@ describe('Button2', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it("should render label in html", () => {
+    expect(component.label()).toBe('');
+  });
+
+  it("should emit the path when function is called", () => {
+    const emitSpy = spyOn(component.goToContact,'emit');
+    const expectedPath = '/contact';
+    component.changePage();
+    expect (emitSpy).toHaveBeenCalledWith(expectedPath);
   });
 });

@@ -1,3 +1,10 @@
 <app-navbar />
 <router-outlet />
+
+<div class=" flex gap-10 items-center ">
+    <button id="increase" (click)="increase()" class=" bg-amber-300 text-xl border p-2 rounded cursor-pointer">Increasing Number</button>
+    <p class=" text-xl border p-2 px-4 rounded-xl bg-amber-100 ">{{num}}</p>
+    <button id="decrease" (click)="decrease()" class=" bg-amber-300 text-xl border p-2 rounded cursor-pointer">Decreasing Number</button>
+</div>
+
 <app-footer />

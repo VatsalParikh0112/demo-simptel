@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:src\\app\\shared\\button-2\\button-2.html", "angular:jit:style:src\\app\\shared\\button-2\\button-2.css", "src/app/shared/button-2/button-2.ts"],
+  "sourcesContent": ["<div role=\"button\" (click)=\"changePage()\" class=\" button flex p-2 m-2 w-6xl justify-center bg-black text-white rounded-xl cursor-pointer \">\r\n    {{label()}}\r\n</div>", "/* src/app/shared/button-2/button-2.css */\n/*# sourceMappingURL=button-2.css.map */\n", "import { Component, input, output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-2',\r\n  imports: [],\r\n  templateUrl: './button-2.html',\r\n  styleUrl: './button-2.css'\r\n})\r\nexport class Button2 {\r\n  label = input<string>('default value');\r\n  goToContact = output<string>();\r\n\r\n  changePage () {\r\n    const path = '/contact';\r\n    this.goToContact.emit( path );\r\n  }\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,iBAAA;AAAA;AAAA,IAAAD,oBAAA;AAAA;AAAA;;;ICQa;;;;;;;AARb;;AAQO,IAAM,UAAN,MAAME,SAAO;cACV,MAAc,eAAe;MACrC,cAAc,OAAM;MAEpB,aAAU;AACR,cAAM,OAAO;AACb,aAAK,YAAY,KAAM,IAAI;MAC7B;;;;;;AAPW,cAAO,WAAA;MANnB,UAAU;QACT,UAAU;QACV,SAAS,CAAA;QACT,UAAA;;OAED;OACY,OAAO;;;",
+  "names": ["button_2_default", "init_button_2", "Button2"]
+}
