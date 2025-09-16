@@ -1,4 +1,4 @@
-import { Component, EventEmitter, output } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { Button } from '../../../shared/button/button';
 
 @Component({
@@ -8,7 +8,7 @@ import { Button } from '../../../shared/button/button';
   styleUrl: './section-1.css'
 })
 export class Section1 {
-   messageEvent = new EventEmitter<string>();
+   messageEvent = output<string>();
 
   notifyParent() {
     this.messageEvent.emit('Hello from the child!');
