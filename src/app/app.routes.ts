@@ -21,10 +21,6 @@ export const routes: Routes = [
   {
     path: 'api',
     loadComponent: () => import('./routes/api/api').then(c => c.API)
-  },
-  { 
-    path: '**',
-    loadComponent: () => import('./routes/page-not-found/page-not-found').then(c => c.PageNotFound) 
   }
 
 ];
