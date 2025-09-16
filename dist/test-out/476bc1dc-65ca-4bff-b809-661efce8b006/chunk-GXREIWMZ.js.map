@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:src\\app\\routes\\home\\section-1\\section-1.html", "angular:jit:style:src\\app\\routes\\home\\section-1\\section-1.css", "src/app/routes/home/section-1/section-1.ts"],
+  "sourcesContent": ["<input (click)=\"onClick()\" class=\"border\" type=\"text\" [(ngModel)]=\"inputValue\">\r\n<button class=\" border p-2 \" (click)=\"onClick()\">log</button>", "/* src/app/routes/home/section-1/section-1.css */\n/*# sourceMappingURL=section-1.css.map */\n", "import { Component } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-section-1',\r\n  imports: [FormsModule],\r\n  templateUrl: './section-1.html',\r\n  styleUrl: './section-1.css'\r\n})\r\nexport class Section1 {\r\n  inputValue: string = '';\r\n\r\n  ngOnInit() {\r\n    console.log(this.inputValue);\r\n  }\r\n\r\n  onClick() {\r\n    console.log(this.inputValue);\r\n  }\r\n}"],
+  "mappings": ";;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,kBAAA;AAAA;AAAA,IAAAD,qBAAA;AAAA;AAAA;;;QCSa;;;;;;;AATb;AACA;AAQO,IAAM,YAAN,WAAc;MACnB,aAAqB;MAErB,WAAQ;AACN,gBAAQ,IAAI,KAAK,UAAU;MAC7B;MAEA,UAAO;AACL,gBAAQ,IAAI,KAAK,UAAU;MAC7B;OATmB,wBAAd;AAAM,eAAQ,WAAA;MANpB,UAAU;QACT,UAAU;QACV,SAAS,CAAC,WAAW;QACrB,UAAA;;OAED;OACY,QAAQ;;;",
+  "names": ["section_1_default", "init_section_1"]
+}

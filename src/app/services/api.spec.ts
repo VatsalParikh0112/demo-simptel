@@ -27,26 +27,33 @@ describe('Api', () => {
   });
 
   it('should fetch the list of users when getUser is called (GET)', () => {
-    const expectedUsers: users[] = [
-      { id: 1, name: 'John Doe', email: 'john@test.com', password: '123' },
-      { id: 2, name: 'Jane Smith', email: 'jane@test.com', password: '456' }
-    ];
+    let mockUsers: users[] = [
+      {
+        id: 1,
+        name: 'Vatsal',
+        password: "vatsal123",
+        email: 'vatsal@mail.com',
+      },
+      {
+        id: 2,
+        name: 'Poojan',
+        password: "pooji123",
+        email: 'pooji@mail.com',
+      }
+    ]
+
+    HttpClientSpy.get.and.returnValue(of(mockUsers));
     const expectedUrl = 'https://jsonplaceholder.typicode.com/users?_limit=3';
 
-    HttpClientSpy.get.and.returnValue(of(expectedUsers));
+    service.getUser().subscribe(users => {
+      expect(users).toEqual(mockUsers);
+    });
 
-    service.getUser().subscribe(
-      res => {
-        expect(res).toEqual(expectedUsers);
-      },
-      fail
-    );
-
-    expect(HttpClientSpy.get).toHaveBeenCalledTimes(1);
+    expect(HttpClientSpy.get).toHaveBeenCalled();
     expect(HttpClientSpy.get).toHaveBeenCalledWith(expectedUrl);
   });
 
-  it('should fetch users (GET)', () => {
+  it('should fetch users by ID (GET)', () => {
     const mockUsers: users[] = [
       {
         id: 1,

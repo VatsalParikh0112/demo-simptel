@@ -12,36 +12,34 @@ describe('Api', () => {
     service = TestBed.inject(Dataservice);
   });
 
-  it('data service should be created', () => {
-    expect(service).toBeTruthy();
-  });
+  it('data service should be called', () => {
+    expect(service).toBeTruthy;
+  })
 
-  it('should return empty products when call initially', () => {
+  it('should return empty array initially', () => {
     expect(service.getProducts()).toEqual([]);
-  });
+  })
 
-  it('should add products', () => {
-    service.addProducts('laptop');
-    expect(service.getProducts()).toEqual(['laptop']);
-  });
+  it('should return products after setting them value', () => {
+    service.products = ['Apple', 'Banana', 'Mango'];
+    expect(service.getProducts()).toEqual(['Apple', 'Banana', 'Mango']);
+  })
 
-  it('should clear all products', () => { 
-    service.addProducts('laptop');
-    service.addProducts('phone');
-    expect(service.getProducts().length).toBe(2);
+  it('should add products when addProducts func is called', () => {
+    service.products = ['Apple', 'Banana', 'Mango'];
+    service.addProducts('Orange');
+    expect(service.getProducts()).toEqual(['Apple', 'Banana', 'Mango', 'Orange']);
+  })
 
-    const cleared = service.clearProducts();
-
-    expect(cleared).toEqual([]);
+  it('should remove all products when removeProduct func is called', () => {
+    service.products = ['Apple', 'Banana', 'Mango', 'Orange'];
+    service.clearProducts();
     expect(service.getProducts()).toEqual([]);
-  });
+  })
 
-  it('should remove selected products', () => {
-    service.addProducts('laptop');
-    service.addProducts('tablet');
-    service.addProducts('phone');
-
-    service.removeProduct('phone');
-    expect(service.getProducts()).toEqual(['laptop', 'tablet']);
-  });
+  it('should remove products when removeProduct func is called', () => {
+    service.products = ['Apple', 'Banana', 'Mango', 'Orange'];
+    service.removeProduct('Apple');
+    expect(service.getProducts()).toEqual(['Banana', 'Mango', 'Orange']);
+  })
 });

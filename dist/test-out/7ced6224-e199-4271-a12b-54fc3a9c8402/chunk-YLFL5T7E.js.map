@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/services/data.ts"],
+  "sourcesContent": ["import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class Dataservice {\r\n  public products: string[] = [];\r\n\r\n  getProducts(): string[] {\r\n    return this.products;\r\n  }\r\n\r\n  addProducts(product: string) {\r\n    this.products.push(product);\r\n  }\r\n\r\n  clearProducts() {\r\n    this.products = [];\r\n    return this.products;\r\n  }\r\n\r\n  removeProduct(productToRemove: string) {\r\n    const index = this.products.findIndex(item => item === productToRemove);\r\n    if (index > -1) {\r\n      this.products.splice(index, 1); \r\n    }\r\n  }\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;QAKa;;;;;AALb;AAKO,IAAM,eAAN,WAAiB;MACf,WAAqB,CAAA;MAE5B,cAAW;AACT,eAAO,KAAK;MACd;MAEA,YAAY,SAAe;AACzB,aAAK,SAAS,KAAK,OAAO;MAC5B;MAEA,gBAAa;AACX,aAAK,WAAW,CAAA;AAChB,eAAO,KAAK;MACd;MAEA,cAAc,iBAAuB;AACnC,cAAM,QAAQ,KAAK,SAAS,UAAU,UAAQ,SAAS,eAAe;AACtE,YAAI,QAAQ,IAAI;AACd,eAAK,SAAS,OAAO,OAAO,CAAC;QAC/B;MACF;OArBsB,2BAAjB;AAAM,kBAAW,WAAA;MAHvB,WAAW;QACV,YAAY;OACb;OACY,WAAW;;;",
+  "names": []
+}

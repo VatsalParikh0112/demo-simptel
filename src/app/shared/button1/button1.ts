@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { inject, Component, input  } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,7 @@ import { Router } from '@angular/router';
 export class Button1 {
 
   label = input<string>('');
-
-  constructor(private router: Router) { }
+  private router = inject(Router);
 
   redirect() {
     this.router.navigate(['/']);

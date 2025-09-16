@@ -18,21 +18,19 @@ describe('Section1', () => {
     logSpy = spyOn(console, 'log').and.callThrough();
   });
 
-  it('should create', () => {
+  it('should create section-1', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should log the initial empty inputValue on init', () => {
-    fixture.detectChanges();
-    expect (logSpy).toHaveBeenCalledWith('');
   })
 
-  it ('should log the updated inputValue when onClick func called', () => {
-    const newMessage = 'xyz';
-    component.inputValue = newMessage;
+  it('should console input value when ngOnit called',() => {
+    fixture.detectChanges();
+    expect(logSpy).toHaveBeenCalledWith('');
+  })
 
+  it('should console input value when onClick func is called', () => {
+    component.inputValue = 'Vatsal';
     component.onClick();
-
-    expect(logSpy).toHaveBeenCalledWith(newMessage);
-  });
+    fixture.detectChanges();
+    expect(logSpy).toHaveBeenCalledWith('Vatsal');
+  })
 });

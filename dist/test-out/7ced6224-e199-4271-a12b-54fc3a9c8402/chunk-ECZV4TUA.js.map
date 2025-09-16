@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:src\\app\\shared\\button1\\button1.html", "angular:jit:style:src\\app\\shared\\button1\\button1.css", "src/app/shared/button1/button1.ts"],
+  "sourcesContent": ["<button (click)=\"redirect()\" class=\" p-2 m-2 rounded-xl border bg-amber-400 cursor-pointer \">\r\n    {{label()}}\r\n</button>", "/* src/app/shared/button1/button1.css */\n/*# sourceMappingURL=button1.css.map */\n", "import { Component, input } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-button1',\r\n  imports: [],\r\n  templateUrl: './button1.html',\r\n  styleUrl: './button1.css'\r\n})\r\nexport class Button1 {\r\n\r\n  label = input<string>('');\r\n\r\n  constructor(private router: Router) { }\r\n\r\n  redirect() {\r\n    this.router.navigate(['/']);\r\n  }\r\n}"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,gBAAA;AAAA;AAAA,IAAAD,mBAAA;AAAA;AAAA;;;QCSa;;;;;;;AATb;AACA;;AAQO,IAAM,WAAN,WAAa;MAIE;cAFZ,MAAc,EAAE;MAExB,YAAoB,QAAc;AAAd,aAAA,SAAA;MAAkB;MAEtC,WAAQ;AACN,aAAK,OAAO,SAAS,CAAC,GAAG,CAAC;MAC5B;OARkB,qCAAb;;yCAAA;;QAAA;AAAM,cAAO,WAAA;MANnB,UAAU;QACT,UAAU;QACV,SAAS,CAAA;QACT,UAAA;;OAED;OACY,OAAO;;;",
+  "names": ["button1_default", "init_button1"]
+}

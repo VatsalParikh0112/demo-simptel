@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:src\\app\\routes\\home\\section-2\\section-2.html", "angular:jit:style:src\\app\\routes\\home\\section-2\\section-2.css", "src/app/routes/home/section-2/section-2.ts"],
+  "sourcesContent": ["<div class=\" text-2xl \">Section2</div>\r\n\r\n<p>Hello, {{ name }}!</p>\r\n<p>Your age is: {{ age }}</p>", "/* src/app/routes/home/section-2/section-2.css */\n/*# sourceMappingURL=section-2.css.map */\n", "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-section-2',\r\n  imports: [],\r\n  templateUrl: './section-2.html',\r\n  styleUrl: './section-2.css'\r\n})\r\nexport class Section2 {\r\n  @Input() name: string = '';\r\n  @Input() age: number = 0;\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,kBAAA;AAAA;AAAA,IAAAD,qBAAA;AAAA;AAAA;;;QCQa;;;;;;;AARb;AAQO,IAAM,YAAN,WAAc;MACV,OAAe;MACf,MAAc;OAFJ,sCAAd;qBACJ,MAAK,CAAA;oBACL,MAAK,CAAA;QAFD;AAAM,eAAQ,WAAA;MANpB,UAAU;QACT,UAAU;QACV,SAAS,CAAA;QACT,UAAA;;OAED;OACY,QAAQ;;;",
+  "names": ["section_2_default", "init_section_2"]
+}

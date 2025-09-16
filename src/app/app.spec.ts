@@ -28,6 +28,11 @@ describe('App', () => {
     expect(component.calculate).toHaveBeenCalled();
   });
 
+  it('should add 2 numbers and return val when calculate func is called', () => {
+    let val = component.calculate(5, 10);
+    expect(val).toBe(15);
+  })
+
   it('should add 2 numbers when savedata func is called', () => {
     spyOn(component, 'calculate').and.returnValues(20);
 

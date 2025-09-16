@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/button-2/button-2.spec.ts"],
+  "sourcesContent": ["import { ComponentFixture, TestBed } from '@angular/core/testing';\r\nimport { Button2 } from './button-2';\r\n\r\nfdescribe('Button2', () => {\r\n  let component: Button2;\r\n  let fixture: ComponentFixture<Button2>;\r\n\r\n\r\n  beforeEach(async () => {\r\n    await TestBed.configureTestingModule({\r\n      imports: [Button2]\r\n    }).compileComponents();\r\n\r\n    fixture = TestBed.createComponent(Button2);\r\n    component = fixture.componentInstance;\r\n    fixture.detectChanges();\r\n  });\r\n\r\n  it('should create button2', () => {\r\n    expect(component).toBeTruthy();\r\n  })\r\n\r\n  it('should handle an empty label', () => {\r\n    fixture.componentRef.setInput('label', 'ClickMe');\r\n    fixture.detectChanges();\r\n    expect(component.label()).toBe('ClickMe');\r\n  })\r\n});"],
+  "mappings": ";;;;;;;;;;;;;;AAAA;;;AACA;AAEA,cAAU,WAAW,MAAK;AACxB,UAAI;AACJ,UAAI;AAGJ,iBAAW,MAAW;AACpB,cAAM,QAAQ,uBAAuB;UACnC,SAAS,CAAC,OAAO;SAClB,EAAE,kBAAiB;AAEpB,kBAAU,QAAQ,gBAAgB,OAAO;AACzC,oBAAY,QAAQ;AACpB,gBAAQ,cAAa;MACvB,EAAC;AAED,SAAG,yBAAyB,MAAK;AAC/B,eAAO,SAAS,EAAE,WAAU;MAC9B,CAAC;AAED,SAAG,gCAAgC,MAAK;AACtC,gBAAQ,aAAa,SAAS,SAAS,SAAS;AAChD,gBAAQ,cAAa;AACrB,eAAO,UAAU,MAAK,CAAE,EAAE,KAAK,SAAS;MAC1C,CAAC;IACH,CAAC;;;",
+  "names": []
+}

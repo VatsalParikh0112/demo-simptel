@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:src\\app\\routes\\contact\\section-1\\section-1.html", "angular:jit:style:src\\app\\routes\\contact\\section-1\\section-1.css", "src/app/routes/contact/section-1/section-1.ts"],
+  "sourcesContent": ["<p>section-1 works!</p>\r\n\r\n<app-button (click)=\"notifyParent()\" label=\"Send Message to Parent\"></app-button>", "/* src/app/routes/contact/section-1/section-1.css */\n/*# sourceMappingURL=section-1.css.map */\n", "import { Component, EventEmitter, Output } from '@angular/core';\r\nimport { Button } from '../../../shared/button/button';\r\n\r\n@Component({\r\n  selector: 'app-section-1',\r\n  imports: [Button],\r\n  templateUrl: './section-1.html',\r\n  styleUrl: './section-1.css'\r\n})\r\nexport class Section1 {\r\n  @Output() messageEvent = new EventEmitter<string>();\r\n\r\n  notifyParent() {\r\n    this.messageEvent.emit('Hello from the child!');\r\n  }\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,kBAAA;AAAA;AAAA,IAAAD,qBAAA;AAAA;AAAA;;;QCSa;;;;;;;AATb;AACA;AAQO,IAAM,YAAN,WAAc;MACT,eAAe,IAAI,aAAY;MAEzC,eAAY;AACV,aAAK,aAAa,KAAK,uBAAuB;MAChD;OALmB,sCAAd;6BACJ,OAAM,CAAA;QADF;AAAM,eAAQ,WAAA;MANpB,UAAU;QACT,UAAU;QACV,SAAS,CAAC,MAAM;QAChB,UAAA;;OAED;OACY,QAAQ;;;",
+  "names": ["section_1_default", "init_section_1"]
+}

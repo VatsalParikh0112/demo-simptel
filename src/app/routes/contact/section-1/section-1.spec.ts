@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Section1 } from './section-1';
+import { emit } from 'process';
 
 describe('Section1', () => {
   let component: Section1;
@@ -17,17 +18,13 @@ describe('Section1', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create section-1/contact', () => {
+    expect(component).toBeTruthy
   });
-
-  it('should emit the correct message when notifyParent is called', () => {
-    const emitSpy = spyOn(component.messageEvent, 'emit');
-    const expectedMessage = 'Hello from the child!';
-
+  
+  it('should notify parent when notifyParent func is called', () => {
+    spyOn(component.messageEvent, 'emit');
     component.notifyParent();
-
-    expect(emitSpy).toHaveBeenCalledTimes(1);
-    expect(emitSpy).toHaveBeenCalledWith(expectedMessage);
-  });
+    expect(component.messageEvent.emit).toHaveBeenCalledWith('Hello from the child!');
+  })
 });

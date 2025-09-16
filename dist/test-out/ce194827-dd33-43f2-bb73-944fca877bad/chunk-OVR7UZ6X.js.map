@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:src\\app\\routes\\home\\section-2\\section-2.html", "angular:jit:style:src\\app\\routes\\home\\section-2\\section-2.css", "src/app/routes/home/section-2/section-2.ts"],
+  "sourcesContent": ["<div class=\" text-2xl \">Section2</div>\r\n\r\n<p>Hello, {{ name }}!</p>\r\n<p>Your age is: {{ age }}</p>", "/* src/app/routes/home/section-2/section-2.css */\n/*# sourceMappingURL=section-2.css.map */\n", "import { Component, Input, Output, EventEmitter, input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-section-2',\r\n  imports: [],\r\n  templateUrl: './section-2.html',\r\n  styleUrl: './section-2.css'\r\n})\r\nexport class Section2 {\r\n  @Input() name: string = '';\r\n  age = input.required<number>()\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,kBAAA;AAAA;AAAA,IAAAD,qBAAA;AAAA;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;ACGEE,qBAAA,kCAAA;AAAA,aAAAC;IAAA,GAAA;EAAA;AAAA,SAAAA;AAAA;QAKWC;;;;;;;AARb;;;AAGEF,mBAAA;;AAKK,IAAME,YAAN,WAAc;MACVC,QAAIH,eAAA,EAAAI,EAAA,CAAA,KAAW;sCAClBC,MAAMC,SAAQ;OAFD,sCAAd;;cACJC;MAAK,CAAA;;;;;;;;;;SADD;;AAAML,eAAQM,WAAA,CANpBC,UAAU;MACTC,UAAU;MACVC,SAAS,CAAA;MACTC,UAAAC;;KAED,CAAC,GACWX,QAAQ;;;",
+  "names": ["section_2_default", "init_section_2", "cov_2j7e6z3nmm", "actualCoverage", "Section2", "name", "s", "input", "required", "Input", "__decorate", "Component", "selector", "imports", "template", "__NG_CLI_RESOURCE__0"]
+}

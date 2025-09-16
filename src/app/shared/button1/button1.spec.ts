@@ -11,7 +11,7 @@ describe('Button1', () => {
     const spy = jasmine.createSpyObj('Router', ['navigate']);
     await TestBed.configureTestingModule({
       imports: [Button1],
-      providers: [{provide : Router, useValue : spy}]
+      providers: [{ provide: Router, useValue: spy }]
     })
       .compileComponents();
 
@@ -21,16 +21,29 @@ describe('Button1', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Button should be created', () => {
     expect(component).toBeTruthy();
-  });
+  })
 
-  it('should render label in html', () => {
+  it('should display label when no label input is provided', () => {
+    fixture.detectChanges();
     expect(component.label()).toBe('');
-  });
+  })
 
-  it('should call router.navigate when redirect function is called ', () => {
+  it('should display label when input is provided', () => {
+    fixture.componentRef.setInput('label', 'Home button');
+    fixture.detectChanges();
+    expect(component.label()).toBe('Home button')
+  })
+
+  it('should navigate to root when redirect func is called', () => {
     component.redirect();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
+  })
+
+  it('should redirect to root when button is clicked', () => {
+    const button = fixture.nativeElement.querySelector('button');
+    button.click();
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['/'])
   })
 });

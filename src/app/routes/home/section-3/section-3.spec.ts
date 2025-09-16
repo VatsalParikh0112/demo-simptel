@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Section3 } from './section-3';
 import { Router } from '@angular/router';
 
@@ -26,30 +25,39 @@ describe('Section3', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should return value to upperCase when useName function is called', () => {
-    component['_userName'] = 'alice';
-    expect(component.userName).toBe('ALICE');
-  });
+  it('should return default empty', () => {
+    expect(component.userName).toBe('');
+  })
 
-  it('should generate correct message for valid users', () => {
-    component.userName = 'Karma';
-    expect(component.welcomeMessage).toBe('Welcome, KARMA!')
-  });
+  it('should return userName to upperCase when userName func is called', () => {
+    component['_userName'] = 'vatsal'
+    expect(component.userName).toBe('VATSAL');
+  })
 
-  it('should generate default message for invalid users', () => {
-    component.userName = 'a';
-    expect(component.welcomeMessage).toBe('Welcome, GUEST!');
-  });
+  it('should set userName when length is more than 2', () => {
+    component.userName = 'Vatsal';
+    expect(component.userName).toBe('VATSAL');
+    expect(console.log).toHaveBeenCalledWith('User name has been set to: Vatsal');
+  })
 
-  it('should log provided event via console.log method', () => {
-    const eventMessage = "Button is clicked";
-    component.console(eventMessage);
-    expect(logSpy).toHaveBeenCalledWith(eventMessage);
-  });
+  it('should set Guest when length is not more than 2 ', () => {
+    component.userName = 'ab';
+    expect(component.userName).toBe('GUEST');
+    expect(console.log).toHaveBeenCalledWith('Invalid user name. Defaulting to Guest.');
+  })
 
-  it('should call router.navigate with the provided path via the redirect method', () => {
-    const path = '/home';
-    component.redirect(path);
-    expect(routerSpy.navigate).toHaveBeenCalledWith([path]);
-  });
+  it('should return welcome message when welcomeUser func is called', () => {
+    component['_userName'] = 'Vatsal';
+    expect(component.userName).toBe('VATSAL');
+  })
+
+  it('should console log event when console func is called', () => {
+    component.console('Vatsal')
+    expect(console.log).toHaveBeenCalledWith('Vatsal');
+  })
+
+  it('should redirect when redirect func is called', () => {
+    component.redirect('/contact');
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['/contact']);
+  })
 }); 

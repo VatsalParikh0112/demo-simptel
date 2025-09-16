@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Contact } from './contact';
 import { ReactiveFormsModule } from '@angular/forms';
 
-describe('Contact', () => {
+  describe('Contact', () => {
   let component: Contact;
   let fixture: ComponentFixture<Contact>;
 
@@ -17,63 +17,98 @@ describe('Contact', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create contact', () => {
     expect(component).toBeTruthy();
-  });
+  })
 
-  it('should have invalid form when its empty', () => {
+  it('should be invalid when profileForm is empty', () => {
     expect(component.profileForm.valid).toBeFalsy();
-  });
-
-  it('should have an invalid userName control if userName is less then 6 characters', () => {
-    component.profileForm.controls.userName.setValue('test');
-    expect(component.profileForm.controls.userName.valid).toBeFalsy();
   })
 
-  it('should have an invalid email control if email is in bad email format', () => {
-    component.profileForm.controls.email.setValue('not-email');
-    expect(component.profileForm.controls.email.valid).toBeFalsy();
+  it('should create profile form', () => {
+    expect(component.profileForm.contains('userName')).toBeTrue();
+    expect(component.profileForm.contains('email')).toBeTrue();
+    expect(component.profileForm.contains('password')).toBeTrue();
   })
 
-  it('should have an valid form when all fields are correct', () => {
-    component.profileForm.controls.userName.setValue('Vatsal');
-    component.profileForm.controls.email.setValue('Vatsal@mail.com');
-    component.profileForm.controls.password.setValue('Poojan123');
-    expect(component.profileForm.controls.email.valid).toBeTruthy();
+  it('should validate userName', () => {
+    const userName = component.profileForm.controls['userName'];
+    userName.setValue('Vat');
+    expect(userName.valid).toBeFalse();
+
+    userName.setValue('Vatsal');
+    expect(userName.valid).toBeTrue();
   })
 
-  it('should submit and reset the form if form is valid on submit', () => {
-    const resetSpy = spyOn(component.profileForm, 'reset');
-    const validData = {
+  it('should validate email', () => {
+    const email = component.profileForm.controls['email'];
+    email.setValue('vatsal');
+    expect(email.valid).toBeFalse();
+
+    email.setValue('Vatsal@test.com');
+    expect(email.valid).toBeTrue();
+  })
+
+  it('should validate password', () => {
+    const password = component.profileForm.controls['password'];
+    password.setValue('Vatsal');
+    expect(password.valid).toBeFalse();
+
+    password.setValue('Vatsal123');
+    expect(password.valid).toBeTrue();
+  })
+
+  it('should submit form and reset form controls', () => {
+    component.profileForm.setValue({
       userName: 'Vatsal',
-      email: 'Vatsal@mail.com',
-      password: 'Poojan123',
-    };
+      email: 'Vatsal@test.com',
+      password: 'Vatsal123'
+    });
 
-    component.profileForm.setValue(validData);
     component.onSubmit();
-    expect(component.formValues).toEqual(validData);
-    expect(resetSpy).toHaveBeenCalledTimes(1);
+
+    expect(component.formValues).toEqual({
+      userName: 'Vatsal',
+      email: 'Vatsal@test.com',
+      password: 'Vatsal123'
+    });
+
+    expect(component.profileForm.value).toEqual({
+      userName: null,
+      email: null,
+      password: null
+    });
   });
 
-  it('should NOT set formValues or reset if the form is invalid on submit', () => {
-    const resetSpy = spyOn(component.profileForm, 'reset');
-    component.formValues = undefined;
+
+  it('should not submit form values if form invalid', () => {
+    component.profileForm.setValue({
+      userName: 'Vv',
+      email: 'bad',
+      password: '123'
+    })
+
     component.onSubmit();
+
     expect(component.formValues).toBeUndefined();
-    expect(resetSpy).not.toHaveBeenCalled();
-  });
+  })
 
-  it('should call reset on the profileForm when the reset method is called', () => {
-    const resetSpy = spyOn(component.profileForm, 'reset');
+  it('should reset after submit func is called', () => {
+
+    component.profileForm.setValue({
+      userName: 'Vatsal',
+      email: 'Vatsal@test.com',
+      password: 'Vatsal123'
+    })
+
     component.reset();
-    expect(resetSpy).toHaveBeenCalledTimes(1);
-  });
 
-  // --- receiveMessage() Method Test ---
-  it('should update the receivedMessage property when receiveMessage is called', () => {
-    const testMessage = 'Hello from parent!';
-    component.receiveMessage(testMessage);
-    expect(component.receivedMessage).toBe(testMessage);
-  });
+    expect(component.formValues).toBeUndefined();
+  })
+
+  it('should recieve message when recievedMessage func is called', () => {
+    expect(component.receivedMessage).toBe('...waiting for message');
+    component.receiveMessage('Hello World');
+    expect(component.receivedMessage).toBe('Hello World');
+  })
 });

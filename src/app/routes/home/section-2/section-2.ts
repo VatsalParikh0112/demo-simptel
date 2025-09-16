@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, input } from '@angular/core';
 
 @Component({
   selector: 'app-section-2',
@@ -7,6 +7,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './section-2.css'
 })
 export class Section2 {
-  @Input() name: string = '';
-  @Input() age: number = 0;
+  name = input<string>();
+  age = input<number>(0);
 }

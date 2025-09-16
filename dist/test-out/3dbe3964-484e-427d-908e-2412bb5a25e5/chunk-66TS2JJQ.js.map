@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:src\\app\\shared\\button\\button.html", "angular:jit:style:src\\app\\shared\\button\\button.css", "src/app/shared/button/button.ts"],
+  "sourcesContent": ["<button class=\" cursor-pointer rounded-xl text-white m-5 p-2 border bg-gray-500  \">\r\n    {{ label() }}\r\n\r\n</button>\r\n<button (click)=\"notifyParent()\">{{ label () }}</button>", "/* src/app/shared/button/button.css */\n/*# sourceMappingURL=button.css.map */\n", "import { Component, input, output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  imports: [],\r\n  templateUrl: './button.html',\r\n  styleUrl: './button.css'\r\n})\r\nexport class Button {\r\n  label = input<string>('');\r\n  sendMessage = output<string>();\r\n\r\n\r\n  notifyParent() {\r\n    this.sendMessage.emit(\"message from child\")\r\n  }\r\n}\r\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,eAAA;AAAA;AAAA,IAAAD,kBAAA;AAAA;AAAA;;;QCQa;;;;;;;AARb;;AAQO,IAAM,UAAN,WAAY;cACT,MAAc,EAAE;MACxB,cAAc,OAAM;MAGpB,eAAY;AACV,aAAK,YAAY,KAAK,oBAAoB;MAC5C;OAPiB,oCAAZ;;;QAAA;AAAM,aAAM,WAAA;MANlB,UAAU;QACT,UAAU;QACV,SAAS,CAAA;QACT,UAAA;;OAED;OACY,MAAM;;;",
+  "names": ["button_default", "init_button"]
+}
