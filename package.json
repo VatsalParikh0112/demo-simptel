@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "serve": "ng serve",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "coverage": "ng test --code-coverage",
-    "serve:ssr:demo": "node dist/demo/server/server.mjs"
+    "coverage": "ng test --code-coverage"
   },
   "prettier": {
     "overrides": [
